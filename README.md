@@ -39,5 +39,11 @@ You can start it in two ways:
 
 Output is saved in the format you choose (default is **MP3**). For full details, options, and troubleshooting, see **MANUAL.md** in this folder.
 
+---
+
+## Troubleshooting
+
+**"Certificate verify failed" when downloading models**  
+The app will retry without SSL verification so the download can finish. To fix SSL for Python on your PC (recommended): run `pip install --upgrade certifi`, then set `SSL_CERT_FILE` to the path shown by `python -c "import certifi; print(certifi.where())"` (e.g. in System Environment Variables).
 
 *George Michael Voice Converter v1.0 — for personal use.*

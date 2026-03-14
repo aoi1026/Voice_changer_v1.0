@@ -1,6 +1,7 @@
 # Core dependencies (Windows)
 setuptools==81.0.0
 numpy==2.3.5
+certifi
 requests>=2.31.0,<2.32.0
 tqdm
 wget
