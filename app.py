@@ -15,6 +15,19 @@ from typing import Any
 now_dir = os.getcwd()
 gradio_temp = os.path.join(now_dir, "assets", "gradio_temp")
 os.makedirs(gradio_temp, exist_ok=True)
+# On Windows, ensure gradio_temp is readable when Starlette serves uploaded files (avoid PermissionError)
+if sys.platform == "win32":
+    try:
+        import subprocess
+        username = os.environ.get("USERNAME", "")
+        if username:
+            subprocess.run(
+                ["icacls", gradio_temp, "/grant", f"{username}:(OI)(CI)F"],
+                capture_output=True,
+                timeout=10,
+            )
+    except Exception:
+        pass
 # Clear old temp files on startup to avoid PermissionError when serving stale paths (e.g. on Windows)
 try:
     now = time.time()
