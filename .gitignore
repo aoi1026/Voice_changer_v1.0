@@ -8,7 +8,6 @@
 *.zip
 *.png
 *.safetensors
-assets/audios
 assets/datasets
 rvc/models
 env
@@ -17,3 +16,4 @@ venv
 *.exe
 *.pth
 *.index
+.gitkeep

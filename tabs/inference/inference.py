@@ -49,6 +49,7 @@ custom_embedder_root = os.path.join(
 FORMANTSHIFT_DIR = os.path.join(now_dir, "assets", "formant_shift")
 
 os.makedirs(custom_embedder_root, exist_ok=True)
+os.makedirs(audio_root, exist_ok=True)
 
 custom_embedder_root_relative = os.path.relpath(custom_embedder_root, now_dir)
 model_root_relative = os.path.relpath(model_root, now_dir)
